@@ -20,7 +20,9 @@ namespace CommonSense
             }
             public static bool Prefix(ref bool __result, Pawn pawn)
             {
-                if (!Settings.skip_snow_clean || pawn.Map.weatherManager.SnowRate == 0 && pawn.Map.weatherManager.RainRate == 0)
+                if (!Settings.skip_snow_clean || pawn.Map.weatherManager.SnowRate == 0 && pawn.Map.weatherManager.RainRate == 0
+                    && pawn.Map.weatherManager.SandRate == 0)
+
                     return true;
 
                 __result = true;
